@@ -1,5 +1,10 @@
 const app = require('./src/app')
+const { dbConnection } = require("./src/database/config");
 
-app.listen(5000, () => {
-   console.log('Servidor en el puerto', 5000)
+const port = process.env.PORT || 5000;
+
+dbConnection();
+
+app.listen(port, () => {
+    console.log('Servidor en el puerto', port)
 })
