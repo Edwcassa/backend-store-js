@@ -8,6 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+doc_api.md
 dist
 dist-ssr
 .env
