@@ -25,7 +25,7 @@ const ProductSchema = new Schema(
             type: Array
         },
 
-        color: [
+        colors: [
             {
                 colorId: { type: String, required: true },
                 name: { type: String, required: true },
