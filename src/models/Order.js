@@ -5,7 +5,7 @@ const OrderSchema = new Schema(
         userId: {
             type: Schema.Types.ObjectId,
             ref: 'User',
-            required:true
+            required: true
         },
 
         products: [
@@ -13,6 +13,18 @@ const OrderSchema = new Schema(
                 productId: {
                     type: Schema.Types.ObjectId,
                     ref: 'Product',
+                    required: true
+                },
+                "price": {
+                    type: Number,
+                    required: true
+                },
+                "size": {
+                    type: String,
+                    default: 1
+                },
+                "colorName": {
+                    type: String,
                     required: true
                 },
                 quantity: {
@@ -45,7 +57,7 @@ const OrderSchema = new Schema(
     {
         timestamps: true
     }
-    
+
 );
 
 module.exports = model('Order', OrderSchema)

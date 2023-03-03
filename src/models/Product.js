@@ -2,6 +2,12 @@ const { model, Schema } = require('mongoose');
 
 const ProductSchema = new Schema(
     {
+        code: {
+            type: String,
+            required: true,
+            unique: true
+        },
+
         title: {
             type: String,
             required: true
@@ -17,26 +23,27 @@ const ProductSchema = new Schema(
             required: true
         },
 
-        categories: {
-            type: Array
+        price: {
+            type: Number,
+            required: true
         },
 
-        size: {
-            type: Array
+        categories: {
+            type: Array,
+            required: true
+        },
+
+        sizes: {
+            type: Array,
+            required: true
         },
 
         colors: [
             {
-                colorId: { type: String, required: true },
-                name: { type: String, required: true },
-                images: { type: Array, required: true }
+                colorName: { type: String, required: true },
+                colorImages: { type: Array, required: true }
             }
-        ],
-
-        price: {
-            type: Number,
-            required: true
-        }
+        ]
     },
     {
         timestamps: true
